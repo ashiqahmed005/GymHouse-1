@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GymHouse - the gym of the future!</title>
+</head>
+<body>
+<h3>The menu would be here, from a template</h3>
+<a href= "{% url 'mainpage:index' %}">Main</a>
+<a href= "{% url 'diary:index' %}">Exercise Diary</a>
+<a href= "{% url 'schedule:index' %}">Schedule</a>
+<a href= "{% url 'services:index' %}">Services</a>
+<a href= "{% url 'online:index' %}">Online</a>
+{% block menu %} {% endblock %}
+<p>Here's an example: {{ variable_example }}!</p>
+<h1>This is the main page </h1>
+</body>
+</html>

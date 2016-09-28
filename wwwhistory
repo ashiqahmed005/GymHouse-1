@@ -1,0 +1,21 @@
+ 
+ 2819  python -m django --version
+ 2820  pip --version
+ 2824  pip install virtualenv
+ 2828  virtualenv venv
+ 2830  source venv/bin/activate
+ 2831  pip install django
+ 2853  sudo apt-get install sqlite3
+ 2833  python -m django --version
+
+
+
+ 2834  django-admin startproject GymHouse
+ 
+
+
+ 2842  python manage.py migrate
+ 2838  python manage.py runserver
+ 
+ 
+ 2854  pip freeze
