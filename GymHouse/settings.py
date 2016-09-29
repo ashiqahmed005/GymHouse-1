@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,7 +61,12 @@ ROOT_URLCONF = 'GymHouse.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ #THIS NEEDS TO BE SORTED OUT, TEMPLATES NOT WORKING
+            os.path.join(BASE_DIR, 'templates/'),
+            #'/mainpage/templates/mainpage',
+            #'GymHouse/mainpage/templates/mainpage/',
+            #'/mainpage/templates/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

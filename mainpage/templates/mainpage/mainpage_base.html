@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GymHouse - the gym of the future!</title>
+</head>
+<body>
+
+<h3>The menu should be here, from a template</h3>
+
+<div id="menu">
+	{% block content %} 
+		IF WE SEE THIS, MENUBLOCK DIDN'T OVERRIDE 
+	{% endblock content %}
+</div>
+
+<p>Here's an example: {{ variable_example }}!</p>
+
+<!-- The variable is received from mainpage/views.py, 
+which renders this view -->
+
+<h1>This is the main page </h1>
+
+<div id="test">
+	<p> The menu here is hardcoded into mainpage_html, not from template </p>
+	<a href= "{% url 'mainpage:main_view_not_logged_in' %}">Main</a>
+	<a href= "{% url 'diary:index' %}">Exercise Diary</a>
+	<a href= "{% url 'schedule:index' %}">Schedule</a>
+	<a href= "{% url 'services:index' %}">Services</a>
+	<a href= "{% url 'online:index' %}">Online</a>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
