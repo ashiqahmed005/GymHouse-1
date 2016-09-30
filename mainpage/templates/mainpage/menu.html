@@ -1,9 +1,16 @@
 {% extends 'mainpage/mainpage_base.html' %}
 
+
+
+
+
 {% block content %}
-<a href= "{% url 'mainpage:main_view_not_logged_in' %}">Main</a>
-<a href= "{% url 'diary:index' %}">Exercise Diary</a>
-<a href= "{% url 'schedule:index' %}">Schedule</a>
-<a href= "{% url 'services:index' %}">Services</a>
-<a href= "{% url 'online:index' %}">Online</a>
+<ul>
+	<li><a href= "{% url 'mainpage:main_view_not_logged_in' %}">Main</a></li>
+	<li><a href= "{% url 'diary:index' %}">Exercise Diary</a></li>
+	<li><a href= "{% url 'schedule:index' %}">Schedule</a></li>
+	<li><a href= "{% url 'services:index' %}">Services</a></li>
+	<li><a href= "{% url 'online:index' %}">Online</a></li>
+	<li style="float:right"><a href= "{% url 'admin:index' %}">Login</a></li>
+</ul>
 {% endblock content %}
