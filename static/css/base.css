@@ -16,6 +16,7 @@
 }
 
 #menu li:last-child {
+    float:right;
     border-right: none;
 }
 
@@ -34,6 +35,11 @@
 
 #menu .active {
     background-color: #4CAF50;
+}
+
+@media screen and (max-width: 600px){
+    #menu ul li:last-child,
+    #menu ul li {float: none;}
 }
 
 /* this menu template is almost straight from w3 tutorial,
