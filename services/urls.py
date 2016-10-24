@@ -4,5 +4,5 @@ from . import views
 
 app_name = 'services' #This enables namespacing (eg. using links in templates <a href="{% url mainpage:index'%}")
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.services_view, name='services_view'),
 ]

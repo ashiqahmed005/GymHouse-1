@@ -1,0 +1,54 @@
+{% extends 'mainpage/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/weekcalendar.css' %}" />
+  <script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'scripts/moment-with-locales.js' %}"></script>
+  <script src="{% static 'scripts/calendar.js' %}"></script>
+{% endblock head %}
+
+{% block title %}
+  GymHouse - Calendar
+{% endblock title %}
+
+{% block content %}
+
+  <h1> This is the Schedule page </h1>
+
+  <hr/>
+  <div class="week_calendar">
+    <div class="week"> 
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+        <div>
+          <span class=weeknumber>WEEKNUMBER</span>
+          <br>
+          <span style="font-size:18px" class="monthYear">MONTH,YEAR</span>
+        </div>
+    </div>
+
+    <div class="weekdays">
+      <div id=-1 class="dayLabel">Time</div>
+      <div id=0 class="dayLabel">Mon</div>
+      <div id=1 class="dayLabel">Tue</div>
+      <div id=2 class="dayLabel">Wed</div>
+      <div id=3 class="dayLabel">Thu</div>
+      <div id=4 class="dayLabel">Fri</div>
+      <div id=5 class="dayLabel">Sat</div>
+      <div id=6 class="dayLabel">Sun</div>
+    </div>
+
+    <div class="days">
+      <div class="timeLabel">
+        <div class="cornerElement"><br/></div>
+          <div class="hours"></div>"
+      </div>
+      <div class="dayElementContainer"></div>
+    </div>
+
+
+
+  </div>
+
+{% endblock content %}

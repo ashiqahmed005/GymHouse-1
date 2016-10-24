@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from django.core.urlresolvers import reverse
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+LOGIN_URL = '/authenticate/login'
+LOGIN_REDIRECT_URL = '/.'
 
 
 # Quick-start development settings - unsuitable for production
@@ -38,11 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainpage',
+    'mainpage.apps.MainpageConfig', #'mainpage',
     'diary',
     'schedule',
     'services',
     'online',
+    'create',
+    'authenticate',
+    'django_extensions',
     #REMEMBER TO ADD CUSTOMMADE APPS HERE!!!
 ]
 
@@ -132,5 +140,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/"),
 ]

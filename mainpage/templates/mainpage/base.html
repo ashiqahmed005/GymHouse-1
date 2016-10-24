@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %} {# load static files like css, images etc #}
+  <title>{% block title %} GymHouse - the gym of the future! {% endblock title %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+  <link rel="icon" type="image/vnd.microsoft.icon"
+     href="{% static 'images/favicon.ico' %}" />
+  {% block head %} {% endblock head %}
+</head>
+<body>
+
+<!--
+Regular:
+Terry
+Terry Test1
+terryterry
+
+Trainer:
+Tina
+Tina Test2
+tinatina
+
+Trainer:
+Token
+Token Test3
+tokentoken
+
+"Admin":
+Tara
+Tara Test4
+taratara
+
+Admin (superuser):
+admin
+- -
+bpabpabpa
+
+
+-->
+
+
+<div id="menu">
+  <ul>
+    <li><a href= "{% url 'mainpage:main_view_not_logged_in' %}"> Main </a></li>
+    <li><a href= "{% url 'diary:diary_view' %}"> Exercise Diary </a></li>
+    <li><a href= "{% url 'schedule:calendar_view' %}"> Schedule </a></li>
+    <li><a href= "{% url 'services:services_view' %}"> Services </a></li>
+    <li><a href= "{% url 'online:online_view' %}"> Online </a></li>
+    <li><a href= "{% url 'create:create_new_entry' %}"> New Entry </a></li>
+
+
+    {% if user.is_authenticated %}
+      <li class="right"><a href= "{% url 'authenticate:logout' %}"> Logout </a></li>
+    {% else %}
+      <li class="right"><a href= "{% url 'authenticate:login' %}"> Login </a></li>
+    {% endif %}
+  </ul>
+  {% if user.is_authenticated %}
+    <br/>
+    <br/>
+    <h3 class="welcome"> Welcome {{user}}! </h3>
+  {% endif %}
+</div>
+
+
+
+
+</br></br>
+
+
+<p>Here's an example: {{ variable_example }}!</p>
+<p>Login(admin panel): ...:8000/admin. user=admin, password=bpabpabpa</p>
+
+<!-- The variable is received from mainpage/views.py, 
+which renders this view -->
+user = {{user}}
+logged_in = {{logged_in}}
+
+
+<hr/>
+{% block content %}
+<h1>PLAIN MAINPAGE_BASE.HTML; NOTHING EXTENDED</h1>
+
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+  <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+
+
+{% endblock content %}
+<hr/>
+
+
+<div class='footer'>
+  <p> Some footer here? </p>
+</div>    
+
+</body>
+</html>

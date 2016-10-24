@@ -7,4 +7,6 @@ from . import views
 app_name = 'mainpage'
 urlpatterns = [
     url(r'^$', views.main_view_not_logged_in, name='main_view_not_logged_in'), #name enables using links?
+    url(r'^$', views.main_view_logged_in, name='main_view_logged_in'),
+    #url(r'^test', views.test, name='test'), #MOVED TO SCHEDULE
 ]

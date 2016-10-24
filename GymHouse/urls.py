@@ -24,4 +24,7 @@ urlpatterns = [
     url(r'^schedule/', include('schedule.urls')),
     url(r'^services/', include('services.urls')),
     url(r'^online/', include('online.urls')),
+    url(r'^create/', include('create.urls')),
+    #url(r'^authenticate/', include('django.contrib.auth.urls'))
+    url(r'^authenticate/', include('authenticate.urls')),
 ]

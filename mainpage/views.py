@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 def main_view_not_logged_in(request):
     context = {'variable_example': "This variable was sent from views!"}
     
-    return render(request, 'mainpage/menu.html', context);
+    return render(request, 'mainpage/mainpage_template.html', context);
     #IF USING TEMPLATE BLOCKS, RENDER THE _CHILD_, NOT THE PARENT
 
 
@@ -15,6 +15,15 @@ def main_view_not_logged_in(request):
 @login_required
 def main_view_logged_in(request):
 	context = {'user': request.user, 
-				'logged_in': request.user.is_authenticated}
+			'logged_in': request.user.is_authenticated}
 
-	return render(request, 'mainpage/menu.html', context);
+	return render(request, 'mainpage/mainpage_template.html', context);
+
+
+
+""" MOVED TO SCHEDULE
+def test(request):
+    context = {'test': "teeeesti"}
+
+    return render(request, 'mainpage/test.html', context);
+"""

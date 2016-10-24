@@ -11,6 +11,20 @@
 	<li><a href= "{% url 'schedule:index' %}">Schedule</a></li>
 	<li><a href= "{% url 'services:index' %}">Services</a></li>
 	<li><a href= "{% url 'online:index' %}">Online</a></li>
-	<li class="right"><a href= "{% url 'admin:index' %}">Login</a></li>
+	<li><a href= "{% url 'create:create_new_entry' %}">New Entry</a></li>
+
+
+	{% if user.is_authenticated %}
+		<li class="right"><a href= "{% url 'authenticate:logout' %}">Logout</a></li>
+	{% else %}
+		<li class="right"><a href= "{% url 'authenticate:login' %}">Login</a></li>
+	{% endif %}
+	
+	}
 </ul>
+{% if user.is_authenticated %}
+	<br/>
+	<br/>
+	<h3 class="welcome"> Welcome {{user}}! </h3>
+{% endif %}
 {% endblock content %}

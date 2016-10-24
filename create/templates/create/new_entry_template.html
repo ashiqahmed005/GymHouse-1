@@ -1,0 +1,28 @@
+{% extends 'mainpage/base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+  <script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
+  <script src="{% static 'scripts/jquery-ui-1.12.1/jquery-ui.js' %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/jquery-ui-1.12.1/jquery-ui.css' %}" />
+
+  <script>
+    $(document).ready(function() {
+        $('.datepicker').datepicker();
+    });
+  </script>
+{% endblock head %}
+
+{% block title %}
+  GymHouse - Create New Entry
+{% endblock title %}
+
+{% block content %}
+
+<form action="{% url 'create:create_new_entry' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+
+{% endblock content %}
