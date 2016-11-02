@@ -1,0 +1,128 @@
+	<!-- Portfolio Filter Begins -->
+				<div class="portfolio-filter animated" data-animation="fadeIn" data-animation-delay="400">
+					<a href="#" data-filter="*" class="current"> ALL</a>
+					<a href="#" data-filter=".magento">MAGENTO</a>
+					<a href="#" data-filter=".opencart">OPENCART</a>
+					<a href="#" data-filter=".joomla">JOOMLA</a>
+					<a href="#" data-filter=".wordpress">WORDPRESS</a>
+					<a href="#" data-filter=".muse">DRUPAL</a>
+					<a href="#" class="last-filter" data-filter=".drupal">MUSE</a>    
+				</div>
+						
+				<!-- Portfolio Container Begins -->
+				<div class="portfolio-container animated" data-animation="fadeIn" data-animation-delay="700">
+					
+					<!-- portfolio item 1 -->
+					<div class="magento opencart muse">					
+						<div class="portfolio-item">
+							<!-- Image -->															
+							<img src="images/portfolio/thumb/1.jpg" alt="image" class="img-responsive">
+						   	<!-- Item Caption -->
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/1.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+										<i class="fa fa-external-link fa-2x"></i>                                            
+									</a>                                
+								</div>
+							</div>
+						</div>						
+					</div>					
+					
+					<!-- portfolio item 2 -->
+					<div class="joomla drupal">						
+						<div class="portfolio-item">
+							<!-- Image -->															
+							<img src="images/portfolio/thumb/2.jpg" alt="image" class="img-responsive">
+						   	<!-- Item Caption -->
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/2.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+									   <i class="fa fa-external-link fa-2x"></i>                                           
+									</a>                                        
+								</div>
+							</div>
+						</div>						
+					</div>
+		   
+					<!-- portfolio item 3 -->
+					<div class="wordpress opencart">						
+						<div class="portfolio-item">	
+							<!-- Image -->																	
+							<img src="images/portfolio/thumb/3.jpg" alt="image" class="img-responsive">	
+							<!-- Item Caption -->					   
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/3.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+										<i class="fa fa-external-link fa-2x"></i>                                            
+									</a>                                        
+								</div>
+							</div>
+						</div>						
+					</div>
+		   
+					<!-- portfolio item 4 -->
+					<div class="drupal joomla opencart magento">						
+						<div class="portfolio-item">
+							<!-- Image -->								
+							<img src="images/portfolio/thumb/4.jpg" alt="image" class="img-responsive">
+						   	<!-- Item Caption -->
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/4.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+										<i class="fa fa-external-link fa-2x"></i>                                           
+									 </a>                                        
+								</div>
+							</div>
+						</div>						
+					</div>				   
+					
+					<!-- portfolio item 5 -->
+					<div class="joomla opencart wordpress">						
+						<div class="portfolio-item">
+							<!-- Image -->								
+							<img src="images/portfolio/thumb/5.jpg" alt="image" class="img-responsive">
+						   	<!-- Item Caption -->
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/5.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+										<i class="fa fa-external-link fa-2x"></i>                                            
+									</a>                                        
+								</div>
+							</div>
+						</div>						
+					</div>
+		   
+					<!-- portfolio item 6 -->
+					<div class="opencart drupal magento">						
+						<div class="portfolio-item">
+							<!-- Image -->									
+							<img src="images/portfolio/thumb/6.jpg" alt="image" class="img-responsive">
+						   	<!-- Item Caption -->
+							<div class="portfolio-item-caption">
+								<div class="portfolio-item-blur"></div>
+								<div class="portfolio-item-text">
+									<h1>New Design Project</h1>
+									<p>Website Project</p>
+									<a href="images/portfolio/large/6.jpg" data-lightbox="opic-portfolio-set" data-title="Amazing Caption of The Project">
+										<i class="fa fa-external-link fa-2x"></i>                                            
+									</a>                                        
+								</div>
+							</div>
+						</div>                                
+					</div>					
+				</div><!-- end portfolioContainer -->

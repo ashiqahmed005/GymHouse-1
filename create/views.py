@@ -26,7 +26,6 @@ def create_new_entry(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            print("gonna save")
             #####form.save()
             new_event = form.save(commit=False)
             # commit=False tells Django that "Don't send this to database yet.
@@ -34,7 +33,6 @@ def create_new_entry(request):
             creator_profile=Profile.objects.get(user=request.user)
             new_event.creator = creator_profile # Set the user object here
             new_event.save() # Now you can send it to DB
-            print("EVENT SAVED!?")
             return HttpResponse("Thanks for that")
 
     # if a GET (or any other method) we'll create a blank form
