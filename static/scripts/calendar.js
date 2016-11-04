@@ -79,7 +79,7 @@ function getWeekRange(dateStr) {
 */
 
 
-addDatesToCalendar = function(week, year){
+addDatesToCalendar = function(week, year, label){
     /*
     var date = new Date();
 
@@ -107,6 +107,12 @@ addDatesToCalendar = function(week, year){
 
     console.log("creating new moment with week " + week +" and year " + year);
     var currentMonday = new moment().year(year).isoWeek(week);
+	
+	if(label == "prev") {
+		currentMonday = currentMonday.subtract(1,'week');
+	} else {
+		currentMonday = currentMonday.add(1,'week');
+	}
 
     console.log("moment currentMonday = " + currentMonday);
     console.log("moment currentMonday.format = " + currentMonday.format("DD/MM/YYYY"));
@@ -233,17 +239,29 @@ addDatesToCalendar = function(week, year){
         */
     }
     console.log("#######################");
-    $(".weeknumber").text("Week "+ week);
+    //$(".weeknumber").text("Week "+ week);
+	$(".weeknumber").text("Week "+ currentMonday.isoWeek());
     var monthName = getMonthName(month);
     if (month != month2)
         monthName += ("/"+getMonthName(month2));
-    $(".monthYear").text(monthName +", " + year);
+    //$(".monthYear").text(monthName +", " + year);
+	$(".monthYear").text(monthName +", " + currentMonday.isoWeekYear());
 
-    var nextWeekMoment = currentMonday.add(1,'week');
+	var nextWeekMoment = currentMonday;
+	
+	/*
+	if(label == "prev") {
+		nextWeekMoment = currentMonday.subtract(1,'week');
+	} else {
+		nextWeekMoment = currentMonday.add(1,'week');
+	}
+	*/
+    
     console.log("nextWeekMoment = " + nextWeekMoment.format("DD/MM/YYYY"));
     console.log("Isoweek: " + nextWeekMoment.isoWeek());
 
-    return [nextWeekMoment.isoWeek(),year];
+    //return [nextWeekMoment.isoWeek(),year];
+	return [nextWeekMoment.isoWeek(),nextWeekMoment.isoWeekYear()];
 };
 
 
@@ -306,11 +324,13 @@ $(document).ready(function(){
         //     week = 52;
         //     year-=1;
         // }
+		/*
         if (mweek==1){
             myear-=1;
         }
-        var ar = addDatesToCalendar(mweek,myear);
-        mweek = ar[0];
+		*/
+        var ar = addDatesToCalendar(mweek,myear, "prev");
+        mweek = ar[0] ;
         myear = ar[1];
     });
     $(".next").click(function(){
@@ -320,10 +340,12 @@ $(document).ready(function(){
         //     week = 1;
         //     year+=1;
         // }
+		/*
         if (mweek==52){
             myear+=1;
         }
-        var ar = addDatesToCalendar(mweek,myear);
+		*/
+        var ar = addDatesToCalendar(mweek,myear, "next");
         mweek = ar[0];
         myear = ar[1];
     });
