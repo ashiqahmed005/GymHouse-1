@@ -3,43 +3,50 @@ body {font-family: Verdana, sans-serif;}
 
 /* Month header */
 .week {
-    padding: 25px 25px;
+    /*padding: 0 25%;*/
+	padding-top: 30px;
     width: 100%;
-    height: 186px;
-    background: #1abc9c;
+    height: 100px;
+    /*background: #1abc9c;*/
 }
 
 .week div {
-    color: white;
+    color: black;
     font-size: 20px;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-align: center;
-    height:100%;
-    padding: 60px 0;
+    /*height:100%;
+    padding: 60px 0;*/
 }
 
 /* Previous button inside month header */
 .week .prev {
     float: left;
-    width: 15%;
-    padding: 60px 0;
+    width: 32px;
+	height: 32px;
     cursor: pointer;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin-left: 10%
 }
 
 /* Next button */
 .week .next {
     float: right;
-    width: 15%;
-    padding: 60px 0;
+    width: 32px;
+	height: 32px;
     cursor: pointer;
+	border: 1px solid black;
+	border-radius: 20px;
+	margin-right: 10%
 }
 
 /* Weekdays (Mon-Sun) */
 .weekdays {
     margin: 0;
-    padding: 10px 0;
-    background-color:#ddd;
+    padding: 10px 0 0px 0;
+    /*background-color:#ddd;*/
 }
 /*
 .weekdays div {
@@ -51,8 +58,8 @@ body {font-family: Verdana, sans-serif;}
 */
 /* Days (1-31) */
 .days {
-    padding: 10px 0;
-    background: #eee;
+    padding: 0px 0;
+    /*background: #eee;*/
     margin: 0;
 }
 
@@ -65,52 +72,80 @@ body {font-family: Verdana, sans-serif;}
     list-style-type: none;
     display: inline-block;
     float: left;
-    width: 12.5%;
+    width: 12.4%;
     text-align: center;
-    margin-bottom: 5px;
-    font-size:18px;
-    color:#777;
+    font-size:15px;
+    color:#fff;
+	margin: 0 0.05%;
+	/*background: #222;*/
+	padding-top: 1%;
+	border-radius: 15px 15px 0 0;
+	
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top, #4c4c4c 0%, #2c2c2c 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #4c4c4c 0%,#2c2c2c 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #4c4c4c 0%,#2c2c2c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#2c2c2c',GradientType=0 ); /* IE6-9 */
+}
+
+.timelabel {
+	background: #fff;
 }
 
 .timeLabel {
     list-style-type: none;
     display: inline-block;
     float: left;
-    width: 12.5%;
+    width: 12.4%;
     text-align: center;
     margin-bottom: 5px;
     color:#777;
+	margin: 0 0.05%;
 }
 
 .dayElement{
     float: left;
-    width: 12.5%;
+    width: 12.4%;
     text-align: center;
+	margin: 0 0.05%;
 }
 
 
 .dayOfMonth{
-    background-color: #1abc9c;
+    background-color: #222;
+	margin-bottom: 1%;
+	padding: 2% 0 5% 0;
+	color: #fff;
+	font-size: 80%;
+	font-weight: bold;
+	
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top, #2c2c2c 0%, #131313 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #2c2c2c 0%,#131313 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #2c2c2c 0%,#131313 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c2c2c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
 
 .hour{
-    padding-top: 5px;
+    padding-top: 15px;
     padding-bottom: 5px;
-    background-color: #1abc9c;
+    /*background-color: #1abc9c;
     border-top: 1px solid #1abc9c;
-    border-bottom: 1px solid #44ff44;
+    border-bottom: 1px solid #44ff44;*/
     height: 50px;
+	font-weight: bold;
+	text-shadow: 1px 1px #888;
 }
 
 .hour:last-of-type{
-    border-bottom: 1px solid #1abc9c;
+    /*border-bottom: 1px solid #1abc9c*/;
 }
 
 .time{
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: #77ff77;
-    border: 1px solid #44ff44;
+    background-color: #e6fff2;
+    border: 1px solid #b3ffd9;
     height: 50px;
 }
 
@@ -119,7 +154,10 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .cornerElement{
-    background-color: #1abc9c;
+    background-color: #fff;
+	margin-bottom: 1%;
+	padding: 2% 0 5% 0;
+	border-radius: 0 0 15px 15px;
 }
 
 

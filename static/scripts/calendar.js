@@ -172,7 +172,7 @@ addDatesToCalendar = function(week, year, label){
 
         $dayElement = $(
             "<div class='dayElement' id="+i+">" +
-                "<div class='dayOfMonth'>"+currentDay+"."+currentMonth+".</div>" +
+                "<div class='dayOfMonth'>"+currentDay+"/"+currentMonth+"</div>" +
                 "<div class='classes'>" +
                     "<div class='timeSlots'></div>" +
                 "</div>" +
@@ -298,6 +298,7 @@ $(document).ready(function(){
     var mday = m.date();
     var mweekday = m.isoWeekday();
     var mweek = m.isoWeek();
+	mweek = mweek - 1;
 
     console.log("MOMENT DMY: " + myear + " " + mmonth +
         " " + mday + " " + mweekday + " week: " + mweek);
@@ -305,13 +306,15 @@ $(document).ready(function(){
     console.log(typeof(mweek));
 
 
-    addDatesToCalendar(mweek,myear);
+    var ar_init = addDatesToCalendar(mweek,myear);
+	mweek = ar_init[0] ;
+    myear = ar_init[1];
 
 
     //Add hours to column "hours"
     for(var i = 0; i<12; i++){
         $(".timeLabel").find(".hours").append(
-            "<div class='hour'>"+(i+8)+ "-" + (i+9) + "</div>"
+            "<div class='hour'>"+(i+8)+ "\xa0-\xa0" + (i+9) + "</div>"
         );
     }
 
