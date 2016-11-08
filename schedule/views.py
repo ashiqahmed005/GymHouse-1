@@ -12,7 +12,7 @@ def index(request):
 """
 @login_required
 def calendar_view(request):
-    events = Event.objects.all()
+    events = Event.objects.all().
     events = serializers.serialize('json', events)
 
     context = {'user': request.user, 
