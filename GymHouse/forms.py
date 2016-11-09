@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from mainpage.models import Event
 from mainpage.models import Class
+from mainpage.models import DAY_CHOICES
 
 class NewEventForm(ModelForm):
     class Meta:
@@ -33,13 +34,17 @@ class NewEventForm(ModelForm):
 
 
 class NewClassForm(ModelForm):
+    """ Needed or not???
     def __init__(self, *args, **kwargs):
         super(NewClassForm, self).__init__(*args, **kwargs)
         self.fields['days'].empty_label = None
+    """
     class Meta:
         model = Class
         exclude = ['creator']
         #'time': forms.TimeInput(format='%H:00'),
+        days = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
+                                         choices=DAY_CHOICES)
         widgets = {
                 'begin_date': forms.DateInput(attrs={'class': 'datepicker'}),
                 'end_date': forms.DateInput(attrs={'class': 'datepicker'}),
