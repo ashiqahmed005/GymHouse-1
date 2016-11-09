@@ -107,10 +107,11 @@ addDatesToCalendar = function(week, year, label){
 
     console.log("creating new moment with week " + week +" and year " + year);
     var currentMonday = new moment().year(year).isoWeek(week);
-	
+	console.log("moment currentMonday before prev/next = " + currentMonday);
+    console.log("label = " + label);
 	if(label == "prev") {
 		currentMonday = currentMonday.subtract(1,'week');
-	} else {
+	} else /*if (label =='next') */{
 		currentMonday = currentMonday.add(1,'week');
 	}
 
@@ -291,6 +292,9 @@ $(document).ready(function(){
 
 
     //MOMENTMOMENTMOMENTMOMENTMOMENTMOMENTMOMOENTM
+
+    
+
     var m = new moment();
     console.log("MOMENT : " + m.format("DD/MM/YYYY"));
     var myear = m.year();

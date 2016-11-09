@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 from .models import Profile
 from .models import Event
+from .models import Class
 #from .models import Level
 #from .models import UserStatus
 
@@ -22,12 +23,20 @@ class ProfileInline(admin.StackedInline):
 class UserAdmin(BaseUserAdmin):
     inlines = (ProfileInline, )
 
+class EventAdmin(admin.ModelAdmin):
+    readonly_fields = ('date_created',)
+
+class ClassAdmin(admin.ModelAdmin):
+    readonly_fields = ('date_created',)
+
 # Re-register UserAdmin
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
 
 # Register other models
-admin.site.register(Event)
+admin.site.register(Event, EventAdmin)
+admin.site.register(Class, ClassAdmin)
+
 #admin.site.register(Level)
 #admin.site.register(UserStatus)
 

@@ -6,6 +6,16 @@
   <script src="{% static 'scripts/jquery-3.1.1.min.js' %}"></script>
   <script src="{% static 'scripts/moment-with-locales.js' %}"></script>
   <script src="{% static 'scripts/calendar.js' %}"></script>
+
+  <script>
+    var db_events = {{ events|safe }};
+    console.log("DB_EVENTS");
+    console.log(db_events);
+    var events_parsed = JSON.parse(db_events);
+    
+    console.log("PARSED:");
+    console.log(events_parsed);
+  </script>
 {% endblock head %}
 
 {% block title %}
@@ -15,6 +25,9 @@
 {% block content %}
 
   <h1> This is the Schedule page </h1>
+
+  JSON:
+  {{events}}
 
   <hr/>
   <div class="week_calendar">
