@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from django import forms
 from django.forms import ModelForm
 from mainpage.models import Event
@@ -34,7 +35,8 @@ class NewEventForm(ModelForm):
 
 
 class NewClassForm(ModelForm):
-    """ Needed or not???
+    # Needed or not???
+    """
     def __init__(self, *args, **kwargs):
         super(NewClassForm, self).__init__(*args, **kwargs)
         self.fields['days'].empty_label = None

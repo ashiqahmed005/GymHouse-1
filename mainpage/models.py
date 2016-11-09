@@ -37,13 +37,13 @@ SATURDAY =      '5'
 SUNDAY =        '6'
 
 DAY_CHOICES = (
-    (MONDAY,    'Monday'),
-    (TUESDAY,   'Tuesday'),
-    (WEDNESDAY, 'Wednesday'),
-    (THURSDAY,  'Thursday'),
-    (FRIDAY,    'Friday'),
-    (SATURDAY,  'Saturday'),
-    (SUNDAY,    'Sunday'),
+    (MONDAY,    u'Monday'),
+    (TUESDAY,   u'Tuesday'),
+    (WEDNESDAY, u'Wednesday'),
+    (THURSDAY,  u'Thursday'),
+    (FRIDAY,    u'Friday'),
+    (SATURDAY,  u'Saturday'),
+    (SUNDAY,    u'Sunday'),
 )
 
 HOUR08 = '8'

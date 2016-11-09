@@ -1,3 +1,4 @@
+/*global db_events*/
 /**
  *  Add a getWeek() method in Javascript inbuilt Date object.
  * This function is the colsest I could find which is ISO-8601 compatible. This is what php's `Date->format('w')` uses.
@@ -293,6 +294,15 @@ $(document).ready(function(){
 
     //MOMENTMOMENTMOMENTMOMENTMOMENTMOMENTMOMOENTM
 
+    console.log("DB_EVENTS");
+    console.log(db_events);
+
+    for (event in db_events){
+        console.log(event);
+    }
+
+
+    
     
 
     var m = new moment();

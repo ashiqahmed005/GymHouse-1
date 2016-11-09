@@ -8,7 +8,10 @@
 
   <script>
     $(document).ready(function() {
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({
+          showWeek: true,
+          firstDay: 1
+        });
     });
   </script>
 {% endblock head %}

@@ -9,12 +9,6 @@
 
   <script>
     var db_events = {{ events|safe }};
-    console.log("DB_EVENTS");
-    console.log(db_events);
-    var events_parsed = JSON.parse(db_events);
-    
-    console.log("PARSED:");
-    console.log(events_parsed);
   </script>
 {% endblock head %}
 
