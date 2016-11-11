@@ -294,8 +294,10 @@ $(document).ready(function(){
 
     //MOMENTMOMENTMOMENTMOMENTMOMENTMOMENTMOMOENTM
 
-    console.log("DB_EVENTS");
+    console.log("DB_EVENTS:");
     console.log(db_events);
+    console.log("\nDB_CLASSES:");
+    console.log(db_classes);
 
     for (event in db_events){
         console.log(event);

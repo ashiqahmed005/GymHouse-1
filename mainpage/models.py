@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 import datetime
+import calendar
 
 BEGINNER =      '1'
 INTERMEDIATE =  '2'
@@ -25,25 +26,6 @@ STATUS_CHOICES = (
     (REGULAR,   'Regular'),
     (TRAINER,   'Trainer'),
     (ADMIN,     'Admin'),
-)
-
-
-MONDAY =        '0'
-TUESDAY =       '1'
-WEDNESDAY =     '2'
-THURSDAY =      '3'
-FRIDAY =        '4'
-SATURDAY =      '5'
-SUNDAY =        '6'
-
-DAY_CHOICES = (
-    (MONDAY,    u'Monday'),
-    (TUESDAY,   u'Tuesday'),
-    (WEDNESDAY, u'Wednesday'),
-    (THURSDAY,  u'Thursday'),
-    (FRIDAY,    u'Friday'),
-    (SATURDAY,  u'Saturday'),
-    (SUNDAY,    u'Sunday'),
 )
 
 HOUR08 = '8'
@@ -105,6 +87,43 @@ class UserStatus(models.Model):
         return self.status == REGULAR
 
 """
+
+class Days(models.Model):
+    MONDAY = '0'
+    TUESDAY = '1'
+    WEDNESDAY = '2'
+    THURSDAY = '3'
+    FRIDAY = '4'
+    SATURDAY = '5'
+    SUNDAY = '6'
+
+    DAY_CHOICES = (
+        (MONDAY, 'Monday'),
+        (TUESDAY, 'Tuesday'),
+        (WEDNESDAY,'Wednesday'),
+        (THURSDAY, 'Thursday'),
+        (FRIDAY, 'Friday'),
+        (SATURDAY,'Saturday'),
+        (SUNDAY, 'Sunday'),
+    )
+    name = models.CharField(max_length=10, default = "Monday")
+    day = models.CharField(
+            max_length=1, 
+            choices = DAY_CHOICES, 
+            default = MONDAY
+    )
+
+    def save(self, *args, **kwargs):
+        if not self.name:
+            self.name = calendar.day_name[self.day]
+        super(Days, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return self.name
+
+
+
+
 
 """
     This is the user's profile. It extends default django user model, which 
@@ -251,16 +270,23 @@ class Class(models.Model):
     times_per_week = models.PositiveIntegerField(
             default=1,
             validators=[
-                MaxValueValidator(5),
+                MaxValueValidator(7),
                 MinValueValidator(1)
             ]
     )
+
+    days = models.ManyToManyField(
+            Days, 
+            related_name='days_of_class', 
+    )
+
+    """
     days = models.CharField(
             max_length=1, 
             choices = DAY_CHOICES, 
             default = MONDAY
     )
-
+    """
     # time = models.TimeField(
     #         default=datetime.time(8, 00),#CHECK THIS
     #         unique_for_date=True
@@ -274,8 +300,4 @@ class Class(models.Model):
     )
     def __unicode__(self):
         return self.name
-
-
-
-
 
